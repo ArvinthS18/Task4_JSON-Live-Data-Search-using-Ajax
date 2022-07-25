@@ -1,0 +1,57 @@
+ body {
+            text-align: center;
+            font-family: "Lucida Console", "Courier New", monospace;
+        }
+  
+        h2 {
+            color: #ffffff;
+            
+        }
+       
+        h3 {
+            color: #ffffff;
+        }
+        table, th, td{
+  border: 4px solid ;
+  padding: 15px;
+  text-align: center;
+}
+tr:nth-child(even) {
+  background-color: #ffffff;
+}
+body {
+  background: #702387;
+  background-image:
+  linear-gradient(to bottom, rgba(27,27,0,0.5), rgba(0,0,27,0.5)),
+  url('12.jpg');
+}
+
+.form-control:focus {
+  box-shadow: none;
+  border-color: #000000;
+}
+
+.profile-button {
+  background: #000000;
+  box-shadow: none;
+  border: none;
+}
+
+.profile-button:hover {
+  background: #000000;
+}
+
+.profile-button:focus {
+  background: #000000;
+  box-shadow: none;
+}
+
+.profile-button:active {
+  background: #999999;
+  box-shadow: none;
+}
+
+.back:hover {
+  color: #682773;
+  cursor: pointer;
+}
