@@ -69,15 +69,7 @@ function fun2(a)
 				url: URL ,
 				type: "GET",
 				success: function (data) {
-				let temp  = "";	
-				temp += "<tr>";
-						temp += "<td>"+ "Serial Number" +"</td>";
-						
-						temp += "<td>" +"Name"+ "</td>";
-						temp += "<td>" +"Type"+ "</td>";
-						temp += "<td>" +"Bithday Date"+ "</td>";
-						temp += "<td>" +"Work Count"+ "</td>";
-						temp += "<td>" +"Top Subjects"+ "</td>";			
+				
 		for (const [key, value] of Object.entries(data))
 		{	
 			if (key == "numFound" && value == 0){document.getElementById("msg").innerHTML = "No Author's are available in this name "; }	
@@ -85,25 +77,32 @@ function fun2(a)
 				if (key == "docs")   {
 					
 				for (var i=0;i<value.length;i++) {
-
-							temp += "<tr>";
-							temp += "<td>"+ parseInt(i+1) +"</td>";
-							temp += "<td>"+ value[i]["name"]+"</td>";						     					        
-							temp += "<td>"+ value[i]["type"] +"</td>";
-							if( value[i]["birth_date"] === undefined){temp +="<td>"+ "No data" +"</td>";}else{temp += "<td>"+ value[i]["birth_date"] +"</td>";}
-							temp += "<td>"+ value[i]["work_count"] +"</td>";
-							if( value[i]["top_subjects"] === undefined){temp +="<td>"+ "No data" +"</td>";}else{temp += "<td>"+ value[i]["top_subjects"] +"</td></tr>";}
-							break;				}  
+                                      document.getElementById("name").innerHTML = value[i]["name"];
+					document.getElementById("type").innerHTML = value[i]["type"];
+					document.getElementById("work_count").innerHTML = value[i]["work_count"];
+					document.getElementById("_version_").innerHTML = value[i]["_version_"];
+					let date;
+                    if( value[i]["birth_date"] === undefined){date = "No data";}else{date= value[i]["birth_date"];}
+					document.getElementById("birth_date").innerHTML = date;
+					document.getElementById("top_work").innerHTML = value[i]["top_work"];
+					document.getElementById("key").innerHTML = value[i]["key"];
+		    if( value[i]["alternate_names"] === undefined){date = "No data";}else{date= value[i]["alternate_names"];}
+				        document.getElementById("alternate_names").innerHTML = value[i]["alternate_names"];		
+                      break;			
+										}
+                          
 						}
 			}
-		}	
-				document.getElementById("data").innerHTML = temp;
 
+		}
+		
 				},
+
+
 				error: function (error) {
 					console.log(`Error ${error}`);
 				}
 			});
 		}
-
+		
 	}
