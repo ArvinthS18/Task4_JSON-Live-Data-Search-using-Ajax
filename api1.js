@@ -37,7 +37,7 @@ function fun()
                             
 					      	    temp += "<tr>";
 					      	    temp += "<th>"+ parseInt(i+1) +"</th>";    
-					            temp += "<td id ="+value[i]['name']+" onClick=fun2(this)><a href='#author'>"+ value[i]["name"] + "</td>"; 				        
+					            temp += "<td id =" + value[i]['name'] + " onClick=fun2(this),document.getElementById('author').style.display='block';document.getElementById('fade').style.display='block'><a href='#author'>" + value[i]["name"] + "</td>";				        				        
 						    temp += "<td>"+ value[i]["type"] +"</td>";
 						   if( value[i]["birth_date"] === undefined){temp +="<td>"+ "No data" +"</td>";}else{temp += "<td>"+ value[i]["birth_date"] +"</td>";}
 							temp += "<td>"+ value[i]["work_count"] +"</td>";
@@ -106,3 +106,11 @@ function fun2(a)
 		}
 		
 	}
+	function closeProfile() {
+	
+	document.getElementById("author").style.display="none";
+	document.getElementById("fade").style.display="none";
+}
+ 
+	
+	
