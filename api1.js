@@ -1,6 +1,6 @@
 	
 function fun()		
-{				 
+{				 $("#loading").show();
 				 let x = document.getElementById("cc").value;
 				 let u ='https://openlibrary.org/search/authors.json?q=';
 				 let URL = u+x;
@@ -18,6 +18,7 @@ function fun()
 						function funt()
 						{console.log(data);
 						}
+						$("#loading").hide();
 				let temp  = "";
 				temp += "<tr>";
 				temp += "<td>"+ "Serial Number" +"</td>";
@@ -53,6 +54,7 @@ function fun()
 				},
 				error: function (error) {
 					console.log(`Error ${error}`);
+					$("#loading").hide();
 				}
 			});
 		}
@@ -64,6 +66,7 @@ function fun2(a)
 	let u ='https://openlibrary.org/search/authors.json?q=';
 	let URL = u+a.innerText;
 	ajaxCall1(URL);
+	  
 		function ajaxCall1(URL) {
 			$.ajax({
 				url: URL ,

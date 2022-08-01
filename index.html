@@ -32,6 +32,11 @@
   <button type="button" onclick="fun()" class="btn btn-success">Search</button>
 </center>
 <br><br>
+ <div id="loading">
+        <div class="centerdiv">
+            <img src="loading-25.gif" style="width:100px;height:100px;">
+        </div>
+    </div>
 <table class="table table-hover table-success">
 	<tbody id="data">
 	</tbody>
@@ -107,7 +112,9 @@
 </div>
 
 <script type="text/javascript" src="api1.js"></script>                   
-                    
+  <script>
+    $("#loading").hide();
+</script>                   
               
     </div>
 </body>
